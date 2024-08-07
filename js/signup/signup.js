@@ -94,7 +94,7 @@ class SignupCheck{
 
         this.event()
     }
-
+    
     event(){
         this.signupBtn.addEventListener('click',async () => {
             if(this.checkTrue.style.display !== 'block'){

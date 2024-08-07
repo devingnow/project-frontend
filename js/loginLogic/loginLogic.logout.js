@@ -14,7 +14,7 @@ export function logoutExecute(logoutDiv, myPageSpan, aTag) {
         myPageSpan.innerHTML = "Log in";
         aTag.href = "../../html/login/login.html";
         try {
-            const response = yield fetch('http://localhost:3000/users/logout');
+            const response = yield fetch('http://localhost:3000/users/logout/out');
             if (!response.ok) {
                 throw new Error("리스폰스 응답 에러");
             }
