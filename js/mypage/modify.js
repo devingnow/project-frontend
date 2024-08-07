@@ -53,12 +53,12 @@ class OkBtn{
                 }
 
                 // 기타 사용자 정보
+                if(document.querySelector('#upw_input').value.length >= 8){
+                    formData.append('upw', document.querySelector('#upw_input').value);
+                }
                 formData.append('unickname', document.querySelector('#unick_input').value);
                 formData.append('uemail', document.querySelector('#uemail_input').value);
                 formData.append('uphone', document.querySelector('#uphone_input').value);
-                if(document.querySelector('#upw_input').value > 8){
-                    formData.append('upw', document.querySelector('#upw_input').value);
-                }
 
                 for (const [key, value] of formData.entries()) {
                     console.log(key, value);
