@@ -29,13 +29,28 @@ class Check{
     }
 
     event(){
-        this.checkBtn.addEventListener('click', () => {
-            if(this.reg.test(this.uid.value)){
-                this.checkFalse.style.display = 'none'
-                this.checkTrue.style.display = 'block'
-            }else{
-                this.checkTrue.style.display = 'none'
-                this.checkFalse.style.display = 'block'
+        this.checkBtn.addEventListener('click', async () => {
+            try{
+                const userId = this.uid.value
+                console.log(userId)
+                const userObj = await axios.post("http://localhost:3000/users/signup/idcheck", {},{ headers: {
+                    'uid' : userId,
+                }})
+                console.log(userObj.data.uid)
+                console.log(userObj)
+                if(this.uid.value !== userObj.data.uid){
+                    if(this.reg.test(this.uid.value)){
+                        this.checkFalse.style.display = 'none'
+                        this.checkTrue.style.display = 'block'
+                    }else{
+                        this.checkTrue.style.display = 'none'
+                        this.checkFalse.style.display = 'block'
+                    }
+                }else{
+                    this.checkFalse.style.display = 'block'
+                }
+            }catch(error){
+
             }
         })
     }
@@ -87,7 +102,7 @@ class SignupCheck{
         this.emailInput = document.querySelector('#uemail')
         this.phoneInput = document.querySelector('#uphone')
 
-        this.nickReg = /^(?=.*[a-z0-9])[a-z0-9]{2,8}$/;
+        this.nickReg = /^(?=.*[a-z0-9])[a-z0-9]{2,16}$/;
         this.emailReg =  /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
         this.phoneReg = /^\d{3}-?\d{3,4}-?\d{4}$/;
         this.pwReg = /^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*?_]).{8,20}$/;
@@ -97,10 +112,13 @@ class SignupCheck{
     
     event(){
         this.signupBtn.addEventListener('click',async () => {
+            console.log('확인용')
             if(this.checkTrue.style.display !== 'block'){
                 alert('아이디 중복확인을 해주세요.')
             }else if((this.pwInput.value == '') || (this.pwInput2.value == '') || (this.nickInput.value == '') || (this.emailInput.value == '') || (this.phoneInput.value == '')){
                 alert('빈칸이 존재합니다.')
+            }else if(!this.nickReg.test(this.nickInput.value)){
+                alert('닉네임이 조건에 맞지 않습니다.')
             }else if(!this.pwReg.test(this.pwInput.value)){
                 alert('비밀번호가 조건에 맞지 않습니다.')
             }else if(this.pwInput.value !== this.pwInput2.value){
@@ -110,11 +128,16 @@ class SignupCheck{
             }else if(!this.phoneReg.test(this.phoneInput.value)){
                 alert('휴대폰 번호를 다시 입력해주세요.')
             }else if((this.checkTrue.style.display === 'block') && (this.pwReg.test(this.pwInput.value)) && (this.pwInput.value === this.pwInput2.value) && (this.nickReg.test(this.nickInput.value)) && (this.emailReg.test(this.emailInput.value)) && (this.phoneReg.test(this.phoneInput.value))){
-                await axios.post("http://localhost:3000/users/signup",{uid:this.idInput.value, unickname:this.nickInput.value, upw:this.pwInput.value, uemail:this.emailInput.value, uphone:this.phoneInput.value}).then((res) => {
-                    console.log(res.data);
-                }) 
-                alert('회원가입에 성공했습니다.')
-                location.href = '../login/login.html'
+                try{
+                    console.log("확인")
+                    await axios.post("http://localhost:3000/users/signup",{uid:this.idInput.value, unickname:this.nickInput.value, upw:this.pwInput.value, uemail:this.emailInput.value, uphone:this.phoneInput.value});
+                    console.log("확인")
+                    alert('회원가입에 성공했습니다.')
+                    location.href = '../login/login.html'
+                }catch(error){
+                    console.log('error', error.response?.data?.message)
+                    alert(`회원가입에 실패했습니다: ${error.response?.data?.message || error.message}` )
+                }
             }
         })
     }
