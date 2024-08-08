@@ -48,7 +48,6 @@ async function faqData(res){
   // 검색 요청
   searchFrm.onsubmit = async (e) => {
     if(faqSearch.value === ""){alert("검색어를 입력해주세요."); e.preventDefault(); return;}
-    if(faqDataFn){alert("찾는 결과가 없습니다."); e.preventDefault(); return;}
   }
   
   // 글 배열 반환
