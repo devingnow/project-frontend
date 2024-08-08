@@ -56,12 +56,26 @@
     width:70px;
     height:30px;
     font-weight: 700;
+    border:none;
+    background-color: rgb(219, 219, 219);
+    border-radius:20px;
+}
+
+#okBtn:hover{
+    border:0.5px solid ;
 }
 
 #cancelBtn{
     width:70px;
     height:30px;
     font-weight: 700;
+    border:none;
+    background-color: rgb(219, 219, 219);
+    border-radius:20px;
+}
+
+#cancelBtn:hover{
+    border:0.5px solid;
 }
 
 #user_img{

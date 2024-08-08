@@ -350,10 +350,14 @@
     position:absolute;
     top:720px;
     right:610px;
+    background-color: rgb(219, 219, 219);
+    border:none;
+    border-radius: 10px;
 }
 
 #okBtn:hover{
     cursor:pointer;
+    border:0.5px solid;
 }
 
 #okBtn > a{
@@ -368,6 +372,9 @@
     position:absolute;
     top:720px;
     right:530px;
+    background-color: rgb(219, 219, 219);
+    border:none;
+    border-radius: 10px;
 }
 
 #cancelBtn > a{
@@ -377,4 +384,5 @@
 
 #cancelBtn:hover{
     cursor:pointer;
+    border:0.5px solid;
 }
