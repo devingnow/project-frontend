@@ -1,7 +1,6 @@
 // 검색 url
 const currentURL = window.location.href;
 const faqSearch = new URL(currentURL).searchParams.get("faqSearch");
-
 // 글 전체 목록 페이지 보여주기
 const Data = async () => {
   if(!faqSearch){
@@ -12,7 +11,6 @@ const Data = async () => {
   const res = await axios.get(`http://localhost:3000/faq/q`,
     {params : {q : faqSearch}}
   )
-
   return res;
 }
 
@@ -58,7 +56,6 @@ async function faqData(res){
   // 검색 요청
   searchFrm.onsubmit = async (e) => {
     if(faqSearch.value === ""){alert("검색어를 입력해주세요."); e.preventDefault(); return;}
-    if(faqDataFn){alert("찾는 결과가 없습니다."); e.preventDefault(); return;}
   }
 
   // 삭제 버튼
