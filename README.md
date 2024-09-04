@@ -24,9 +24,7 @@
 ## 목차
 
 - [**주요 페이지**](#주요-페이지)
-  - [Signup
-  
-  Page](#Signup-Page)
+  - [SignupPage](#Signup-Page)
   - [LoginPage](#Login-Page)
   - [Mypage](#Mypage)
 - [**주요 기능**](#주요-기능)
