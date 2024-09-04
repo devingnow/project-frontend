@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 //--------------------------------- 버튼 -------------------------------------
 
+
 class Btn{
   constructor(){
     this.modifyBtn = document.querySelector('#okBtn')
