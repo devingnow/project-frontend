@@ -5,7 +5,7 @@
 ### 개발자 : [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FTeTedo&count_bg=%230D00FF&title_bg=%23000000&icon=darkreader.svg&icon_color=%23FF0000&title=hits&edge_flat=false)](https://github.com/devingnow)(devingnow)
 
 # 담당 작업
- - 프론트
+ - 프론트,백엔드
 
  - 회원가입
     - 정규식을 이용한 조건 생성
