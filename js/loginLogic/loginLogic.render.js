@@ -8,6 +8,7 @@ export function drawMyPageAndLogout() {
     logoutDiv.classList.add("banner-userUI-logout");
     const logoutSpan = document.createElement('span');
     logoutSpan.innerHTML = "Logout";
+    logoutSpan.classList.add('logoutSpan')
     logoutDiv.appendChild(logoutSpan);
     myPage.insertAdjacentElement('afterend', logoutDiv);
     logoutDiv.addEventListener('click', () => {

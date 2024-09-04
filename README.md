@@ -24,13 +24,11 @@
 ## 목차
 
 - [**주요 페이지**](#주요-페이지)
-  - [Signup
-  
-  Page](#Signup-Page)
+  - [SignupPage](#Signup-Page)
   - [LoginPage](#Login-Page)
   - [Mypage](#Mypage)
 - [**주요 기능**](#주요-기능)
-  - [로그인시 쿠키생성](#로그인시-쿠키생성)
+  - [로그인버튼 클릭](#로그인버튼-클릭)
 - [**이슈**](#이슈)
   - [데이터베이스 연결](#데이터베이스-연결)
 
@@ -43,3 +41,37 @@
 ## 주요 페이지
 
 ### **Signup Page**
+
+<img src="https://github.com/user-attachments/assets/02275c3b-cb59-4d7a-9e4a-10b2226e86b7">
+<img src="https://github.com/user-attachments/assets/0801df52-6fab-42eb-b237-a983f7c67e6e">
+
+
+### **LoginPage**
+
+<img src="https://github.com/user-attachments/assets/d8077584-592c-46c6-bc0c-e1aba402cbd6">
+<img src="https://github.com/user-attachments/assets/4bc441df-728d-46b1-8057-97f00de73c5e">
+
+
+### **Mypage**
+
+<img src="https://github.com/user-attachments/assets/31b5dd3d-57e4-4cce-9f00-0dbf70ca4d09">
+<img src="https://github.com/user-attachments/assets/0cd607e4-5b75-4521-98ac-50020452042a">
+<img src="https://github.com/user-attachments/assets/0095abd6-c435-4afa-ad27-cccdcca45196">
+
+---
+
+## 주요 기능
+
+### 로그인버튼 클릭
+
+<img src="https://github.com/user-attachments/assets/d16cf27d-b09c-4324-b60e-4d312e870e94">
+
+---
+
+## 이슈 사항
+
+### 마이페이지
+
+마이페이지 접속시 
+
+
